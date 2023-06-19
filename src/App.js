@@ -13,7 +13,7 @@ import './App.css';
 
 //You must add your own API key here from Clarifai.
 const app = new Clarifai.App({
- apiKey: 'YOUR API KEY HERE'
+ apiKey: '7bc111b42ed74cbf904b58cb862eee71'
 });
 
 // No Longer need this. Updated to particles-bg
@@ -114,7 +114,7 @@ class App extends Component {
       this.setState({isSignedIn: false})
     } else if (route === 'home') {
       this.setState({isSignedIn: true})
-    }
+    } 
     this.setState({route: route});
   }
 
@@ -124,25 +124,25 @@ class App extends Component {
       <div className="App">
         <ParticlesBg type="fountain" bg={true} />
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
-        { route === 'home'
-          ? <div>
+        {/* { route === 'home' */}
+          {/* ? <div> */}
               <Logo />
-              <Rank
+              {/* <Rank
                 name={this.state.user.name}
                 entries={this.state.user.entries}
-              />
+              /> */}
               <ImageLinkForm
                 onInputChange={this.onInputChange}
                 onButtonSubmit={this.onButtonSubmit}
               />
               <FaceRecognition box={box} imageUrl={imageUrl} />
-            </div>
+            {/* </div>
           : (
              route === 'signin'
              ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
              : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
-            )
-        }
+            ) */}
+        {/* } */}
       </div>
     );
   }
